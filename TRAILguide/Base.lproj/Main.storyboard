@@ -66,6 +66,9 @@
                                 <state key="normal" title="BACK TO THE APP">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goIntoApp:" destination="6yU-VB-UcN" eventType="touchUpInside" id="DXd-Vq-WXG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,6 +112,9 @@
                                             <constraint firstAttribute="height" constant="24" id="cRC-rP-3uu"/>
                                         </constraints>
                                         <state key="normal" image="infoBtn"/>
+                                        <connections>
+                                            <action selector="appInfoButtonPressed:" destination="PIH-kl-MHJ" eventType="touchUpInside" id="01z-Fh-2CF"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-nw-Xya">
                                         <rect key="frame" x="108.5" y="18" width="158" height="39"/>
@@ -143,15 +149,15 @@
                                     <constraint firstItem="DVi-bl-eAz" firstAttribute="centerY" secondItem="P7W-Kr-vVi" secondAttribute="centerY" id="dpb-qe-m8i"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tao-Ok-3ne">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tao-Ok-3ne">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" alpha="0.050000000000000003" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="9KT-XZ-Qex">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.050000000000000003" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trailCell" rowHeight="70" id="9KT-XZ-Qex" customClass="TrailCell" customModule="TRAILguide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9KT-XZ-Qex" id="jhp-vU-Fv5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hikingBG" translatesAutoresizingMaskIntoConstraints="NO" id="tcX-NL-Ffk">
@@ -163,7 +169,7 @@
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIKING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMQ-CP-xq3">
-                                                    <rect key="frame" x="117" y="8" width="140" height="52"/>
+                                                    <rect key="frame" x="117" y="9" width="140" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <nil key="highlightedColor"/>
@@ -199,7 +205,8 @@
                         <viewLayoutGuide key="safeArea" id="Ej4-9c-2IP"/>
                     </view>
                     <connections>
-                        <segue destination="iuH-WR-jIL" kind="show" identifier="specificCategoriesVC" id="gdw-UH-d9b"/>
+                        <outlet property="tableView" destination="Tao-Ok-3ne" id="JTk-Lg-TLZ"/>
+                        <segue destination="iuH-WR-jIL" kind="show" identifier="specificCategoryVC" id="gdw-UH-d9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGt-cc-tvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,6 +231,9 @@
                                             <constraint firstAttribute="height" constant="24" id="PNh-JT-cyA"/>
                                         </constraints>
                                         <state key="normal" image="backBtn"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="iuH-WR-jIL" eventType="touchUpInside" id="STh-Wf-c3s"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-ip-pB5">
                                         <rect key="frame" x="108.5" y="18" width="158" height="38.5"/>
@@ -274,7 +284,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="center" id="gxs-Et-Xwq">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="center" reuseIdentifier="itemCell" id="gxs-Et-Xwq" customClass="ItemCell" customModule="TRAILguide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="156" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -291,6 +301,10 @@
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="iuH-WR-jIL" id="h2H-f8-7Db"/>
+                                    <outlet property="delegate" destination="iuH-WR-jIL" id="SNJ-tk-JB5"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -313,6 +327,7 @@
                         <viewLayoutGuide key="safeArea" id="wcR-wm-aZH"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="DZR-Ob-R9Y" id="gVI-1H-frh"/>
                         <segue destination="Yko-N9-RfC" kind="show" identifier="detailVC" id="1qa-sF-Chv"/>
                     </connections>
                 </viewController>
@@ -338,6 +353,9 @@
                                             <constraint firstAttribute="height" constant="24" id="s5A-lT-pTm"/>
                                         </constraints>
                                         <state key="normal" image="backBtn"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="Yko-N9-RfC" eventType="touchUpInside" id="EmV-r0-EJm"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1h4-eY-xlt">
                                         <rect key="frame" x="114.5" y="18" width="146.5" height="38.5"/>

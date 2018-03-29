@@ -8,18 +8,55 @@
 
 import UIKit
 
-class AllCategoriesVC: UIViewController {
+class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //outlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
 
-
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+    @IBAction func appInfoButtonPressed(_ sender: Any) {
         
-        performSegue(withIdentifier: "specificCategoriesVC", sender: self)
+        dismiss(animated: true, completion: nil)
     }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "trailCell", for: indexPath) as? TrailCell else {return UITableViewCell()}
+       
+        return cell
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
+        return CGFloat(40)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "specificCategoryVC", sender: self)
+    }
+    
+    
 }

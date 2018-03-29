@@ -15,6 +15,8 @@
 		6C383D9F2069E0FA005930D0 /* SpecificCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383D9E2069E0FA005930D0 /* SpecificCategoryVC.swift */; };
 		6C383DA12069E112005930D0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383DA02069E112005930D0 /* DetailVC.swift */; };
 		6C383DA32069E12A005930D0 /* AppInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383DA22069E12A005930D0 /* AppInfoVC.swift */; };
+		6C383DA5206C751C005930D0 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383DA4206C751C005930D0 /* TrailCell.swift */; };
+		6C383DA7206C952D005930D0 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383DA6206C952D005930D0 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		6C383D9E2069E0FA005930D0 /* SpecificCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificCategoryVC.swift; sourceTree = "<group>"; };
 		6C383DA02069E112005930D0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		6C383DA22069E12A005930D0 /* AppInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoVC.swift; sourceTree = "<group>"; };
+		6C383DA4206C751C005930D0 /* TrailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
+		6C383DA6206C952D005930D0 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		6C383D9A2069E08E005930D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6C383DA4206C751C005930D0 /* TrailCell.swift */,
+				6C383DA6206C952D005930D0 /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,7 +177,9 @@
 			files = (
 				6C383DA32069E12A005930D0 /* AppInfoVC.swift in Sources */,
 				6C383D9D2069E0D3005930D0 /* AllCategoriesVC.swift in Sources */,
+				6C383DA5206C751C005930D0 /* TrailCell.swift in Sources */,
 				6C383DA12069E112005930D0 /* DetailVC.swift in Sources */,
+				6C383DA7206C952D005930D0 /* ItemCell.swift in Sources */,
 				6C383D9F2069E0FA005930D0 /* SpecificCategoryVC.swift in Sources */,
 				6C383D882069E064005930D0 /* AppDelegate.swift in Sources */,
 			);
