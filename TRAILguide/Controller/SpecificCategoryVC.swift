@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //outlets
     
@@ -37,13 +37,11 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return 7
     }
     
 
@@ -52,6 +50,18 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
         
         performSegue(withIdentifier: "detailVC", sender: self)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let numberOfColumns: CGFloat = 2
+        let spaceBetweenCells: CGFloat = 20
+        let padding: CGFloat = 40 // 20 on both sides
+        let cellDimension = ((collectionView.bounds.width - padding) - (numberOfColumns - 1) * spaceBetweenCells ) / numberOfColumns
+        
+        return CGSize(width: cellDimension, height: cellDimension)
+        
+    }
+    
     
     
 }
