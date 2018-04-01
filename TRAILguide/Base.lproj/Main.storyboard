@@ -188,6 +188,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="tcX-NL-Ffk" secondAttribute="trailing" id="uEP-k2-MMU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImage" destination="tcX-NL-Ffk" id="gw4-yg-65J"/>
+                                            <outlet property="categoryName" destination="gMQ-CP-xq3" id="2HW-eI-eLf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -32,6 +32,9 @@ class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "trailCell", for: indexPath) as? TrailCell else {return UITableViewCell()}
+        
+        let category = DataService.instance.getCategories()[indexPath.row]
+        cell.updateCell(category: category)
        
         return cell
         
@@ -44,13 +47,14 @@ class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 6
+        return DataService.instance.getCategories().count
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         
-        return CGFloat(tableView.frame.height / 6)
+        return CGFloat(tableView.frame.height / CGFloat(DataService.instance.getCategories().count))
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

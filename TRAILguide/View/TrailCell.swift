@@ -10,9 +10,22 @@ import UIKit
 
 class TrailCell: UITableViewCell {
 
+    //outlets
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var categoryName: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+    }
+    
+    func updateCell(category: Categories){
+        
+        categoryName.text = category.title
+        backgroundImage.image = UIImage(named: category.image)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
