@@ -59,8 +59,25 @@ class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "specificCategoryVC", sender: self)
+        let category = DataService.instance.getCategories()[indexPath.row]
+        performSegue(withIdentifier: "specificCategoryVC", sender: category)
+
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? SpecificCategoryVC {
+            
+            
+            if let category = sender as? Categories {
+                
+                destination.initData(category: category)
+                
+
+                
+            }
+           
+        }
+    }
     
 }

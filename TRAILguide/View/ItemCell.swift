@@ -10,6 +10,11 @@ import UIKit
 
 class ItemCell: UICollectionViewCell {
     
+    //outlets
+    
+    
+    @IBOutlet weak var collectionGearImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
       
@@ -20,6 +25,11 @@ class ItemCell: UICollectionViewCell {
         
     }
     
+    func updateCollectionCell(specificCategory: SpecificCategory) {
+        
+        self.collectionGearImage.image = UIImage(named: specificCategory.image)
+        
+    }
 //    override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
 //

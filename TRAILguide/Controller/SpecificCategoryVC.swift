@@ -12,14 +12,23 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
 
     //outlets
     
+    @IBOutlet weak var mainTitleLabel: UILabel!
+    @IBOutlet weak var categoryBGImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    //variables
+    public private (set) var specificCategoryGearArray = [SpecificCategory]()
+    public private (set) var category: Categories! = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+  
+        setUpView()
+
         // Do any additional setup after loading the view.
     }
 
@@ -28,11 +37,27 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
         dismiss(animated: true, completion: nil)
     }
     
+    func initData(category: Categories) {
+        
+        self.category = category
+        specificCategoryGearArray = DataService.instance.getSpecificCategories(forCategoryTitle: category.title)
+
+    }
+    
+    func setUpView() {
+
+        mainTitleLabel.text = "\(category.title) GEAR"
+        categoryBGImage.image = UIImage(named: category.image)
+
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as? ItemCell else {return UICollectionViewCell()}
+        let gear = specificCategoryGearArray[indexPath.row]
+        cell.updateCollectionCell(specificCategory: gear)
         
         return cell
     }
@@ -41,14 +66,15 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 7
+        return specificCategoryGearArray.count
     }
     
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "detailVC", sender: self)
+  
+        let gear = DataService.instance.getSpecificCategories(forCategoryTitle: category.title)[indexPath.row]
+        performSegue(withIdentifier: "detailVC", sender: gear)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -62,6 +88,17 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? DetailVC {
+            
+            if let specCat = sender as? SpecificCategory {
+                
+                destination.initData(gear: specCat)
+                
+            }
+        }
+    }
     
     
 }

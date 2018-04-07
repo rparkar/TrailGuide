@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yU-VB-UcN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yU-VB-UcN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Bold</string>
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--App InfoVC-->
         <scene sceneID="mQD-bX-hdT">
@@ -269,6 +262,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campingBG" translatesAutoresizingMaskIntoConstraints="NO" id="Qdk-VU-wmB">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                             </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1h-Wh-cgR">
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMPING GEAR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImJ-aW-jK3">
                                 <rect key="frame" x="30" y="85" width="315" height="125"/>
                                 <constraints>
@@ -308,6 +305,9 @@
                                             <constraint firstAttribute="bottom" secondItem="WXa-Wr-wVs" secondAttribute="bottom" constant="10" id="NvI-XA-p75"/>
                                             <constraint firstItem="WXa-Wr-wVs" firstAttribute="top" secondItem="gxs-Et-Xwq" secondAttribute="top" constant="10" id="lwc-on-Mdk"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="collectionGearImage" destination="WXa-Wr-wVs" id="swW-1m-D31"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -318,25 +318,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="j1h-Wh-cgR" firstAttribute="leading" secondItem="wcR-wm-aZH" secondAttribute="leading" id="7YG-bq-OEQ"/>
+                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="leading" secondItem="wcR-wm-aZH" secondAttribute="leading" id="8k6-rD-DJw"/>
                             <constraint firstItem="s4q-uX-Uqd" firstAttribute="leading" secondItem="wcR-wm-aZH" secondAttribute="leading" id="9uI-vn-DCp"/>
                             <constraint firstItem="DZR-Ob-R9Y" firstAttribute="top" secondItem="ImJ-aW-jK3" secondAttribute="bottom" constant="6" id="Bbv-Ur-j7g"/>
                             <constraint firstItem="wcR-wm-aZH" firstAttribute="trailing" secondItem="DZR-Ob-R9Y" secondAttribute="trailing" id="Bpe-oA-OVh"/>
-                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="leading" secondItem="wcR-wm-aZH" secondAttribute="leading" id="Esi-hr-t3Z"/>
+                            <constraint firstItem="j1h-Wh-cgR" firstAttribute="top" secondItem="s4q-uX-Uqd" secondAttribute="bottom" id="Dz7-1G-jhG"/>
+                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="top" secondItem="s4q-uX-Uqd" secondAttribute="bottom" id="HxK-Hu-Pgh"/>
                             <constraint firstItem="DZR-Ob-R9Y" firstAttribute="leading" secondItem="wcR-wm-aZH" secondAttribute="leading" id="Hyf-Wd-sxC"/>
                             <constraint firstItem="ImJ-aW-jK3" firstAttribute="leading" secondItem="wcR-wm-aZH" secondAttribute="leading" constant="30" id="K3Q-d5-CN3"/>
                             <constraint firstItem="s4q-uX-Uqd" firstAttribute="top" secondItem="IFU-fc-KrN" secondAttribute="top" id="L49-U4-YcM"/>
                             <constraint firstItem="ImJ-aW-jK3" firstAttribute="top" secondItem="s4q-uX-Uqd" secondAttribute="bottom" constant="10" id="Lxs-MF-Rkv"/>
+                            <constraint firstItem="j1h-Wh-cgR" firstAttribute="trailing" secondItem="wcR-wm-aZH" secondAttribute="trailing" id="Mzq-bG-XgX"/>
                             <constraint firstItem="DZR-Ob-R9Y" firstAttribute="bottom" secondItem="wcR-wm-aZH" secondAttribute="bottom" id="OHi-CD-lyx"/>
                             <constraint firstItem="s4q-uX-Uqd" firstAttribute="trailing" secondItem="wcR-wm-aZH" secondAttribute="trailing" id="TSh-pr-zaS"/>
                             <constraint firstItem="ImJ-aW-jK3" firstAttribute="centerX" secondItem="IFU-fc-KrN" secondAttribute="centerX" id="YIy-Nq-Ok2"/>
-                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="bottom" secondItem="wcR-wm-aZH" secondAttribute="bottom" id="lUx-f9-Nkq"/>
-                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="trailing" secondItem="wcR-wm-aZH" secondAttribute="trailing" id="osm-Ec-BDF"/>
-                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="top" secondItem="s4q-uX-Uqd" secondAttribute="bottom" id="tBZ-GT-qjT"/>
+                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="bottom" secondItem="wcR-wm-aZH" secondAttribute="bottom" id="dVo-Uk-xTW"/>
+                            <constraint firstItem="Qdk-VU-wmB" firstAttribute="trailing" secondItem="wcR-wm-aZH" secondAttribute="trailing" id="hGQ-Un-Bbs"/>
+                            <constraint firstItem="j1h-Wh-cgR" firstAttribute="bottom" secondItem="wcR-wm-aZH" secondAttribute="bottom" id="vpT-AF-2BO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wcR-wm-aZH"/>
                     </view>
                     <connections>
+                        <outlet property="categoryBGImage" destination="Qdk-VU-wmB" id="Hl0-g0-dUF"/>
                         <outlet property="collectionView" destination="DZR-Ob-R9Y" id="gVI-1H-frh"/>
+                        <outlet property="mainTitleLabel" destination="ImJ-aW-jK3" id="TnW-EC-BuS"/>
                         <segue destination="Yko-N9-RfC" kind="show" identifier="detailVC" id="1qa-sF-Chv"/>
                     </connections>
                 </viewController>
@@ -458,6 +464,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QIe-NE-Oi1"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryBackgroundImage" destination="zcy-3R-Jaq" id="qiM-jb-Lrl"/>
+                        <outlet property="gearDescription" destination="ZXG-m1-e9K" id="Dfx-pw-09B"/>
+                        <outlet property="gearImage" destination="VH5-mX-hwW" id="aJy-BH-xZf"/>
+                        <outlet property="gearNameLabel" destination="Dq0-hF-GvX" id="mpZ-1l-d3P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXK-Ru-I8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,12 +13,15 @@ class SpecificCategory {
     public private (set) var categoryName: String
     public private (set) var categoryBackGround: String
     public private (set) var image: String
+    private (set) public var description: String
     
-    init(categoryName: String, categoryBackground: String, categoryimage: String) {
+    init(categoryName: String, categoryBackground: String, specificImage: String, description: String) {
         
         self.categoryName = categoryName
-        self.categoryBackGround = categoryBackground
-        self.image = categoryimage
+       self.categoryBackGround = categoryBackground
+        self.image = specificImage
+        self.description = description
+        
     }
     
 }

@@ -9,11 +9,39 @@
 import UIKit
 
 class DetailVC: UIViewController {
+    
+    //outlets
+    
+    @IBOutlet weak var gearImage: UIImageView!
+    @IBOutlet weak var categoryBackgroundImage: UIImageView!
+    @IBOutlet weak var gearNameLabel: UILabel!
+    @IBOutlet weak var gearDescription: UILabel!
+    
+    //variables
+    private (set) public var gear : SpecificCategory! = nil
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpView()
         // Do any additional setup after loading the view.
+    }
+
+    func initData (gear: SpecificCategory) {
+        
+        self.gear = gear
+        print(gear.categoryBackGround)
+        
+    }
+    
+    func setUpView() {
+
+        categoryBackgroundImage.image = UIImage(named: gear.categoryBackGround)
+        gearNameLabel.text = gear.image
+        gearImage.image = UIImage(named: gear.image)
+        gearDescription.text = gear.description
+        
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
