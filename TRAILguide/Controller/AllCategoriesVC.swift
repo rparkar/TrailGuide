@@ -11,7 +11,6 @@ import UIKit
 class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //outlets
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,9 +18,6 @@ class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func appInfoButtonPressed(_ sender: Any) {
@@ -46,19 +42,16 @@ class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return DataService.instance.getCategories().count
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        
         return CGFloat(tableView.frame.height / CGFloat(DataService.instance.getCategories().count))
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let category = DataService.instance.getCategories()[indexPath.row]
         performSegue(withIdentifier: "specificCategoryVC", sender: category)
 
@@ -68,13 +61,8 @@ class AllCategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         if let destination = segue.destination as? SpecificCategoryVC {
             
-            
             if let category = sender as? Categories {
-                
                 destination.initData(category: category)
-                
-
-                
             }
            
         }

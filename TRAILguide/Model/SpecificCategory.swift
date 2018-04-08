@@ -18,7 +18,7 @@ class SpecificCategory {
     init(categoryName: String, categoryBackground: String, specificImage: String, description: String) {
         
         self.categoryName = categoryName
-       self.categoryBackGround = categoryBackground
+        self.categoryBackGround = categoryBackground
         self.image = specificImage
         self.description = description
         

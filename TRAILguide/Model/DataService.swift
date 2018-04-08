@@ -32,8 +32,18 @@ class DataService {
     ]
     
     private let camping = [
-        SpecificCategory(categoryName: "Camping", categoryBackground: "campingBG", specificImage: "sleepingBag", description: "This is an amazing sleeping bag")
+        SpecificCategory(categoryName: "CAMPING", categoryBackground: "campingBG", specificImage: "sleepingBag", description: "This is an amazing sleeping bag")
     ]
+    
+    private let diving = [SpecificCategory(categoryName: "DIVING", categoryBackground: "divingBG", specificImage: "sleepingBag", description: "This is an amazing sleeping bag")]
+    
+    private let fishing = [SpecificCategory(categoryName: "FISHING", categoryBackground: "fishingBG", specificImage: "sleepingBag", description: "This is an amazing sleeping bag")]
+    
+    private let rvLife = [SpecificCategory(categoryName: "RV LIFE", categoryBackground: "rvBG", specificImage: "sleepingBag", description: "This is an amazing sleeping bag")]
+    
+    private let backpacks = [SpecificCategory(categoryName: "BACKPACKS", categoryBackground: "backpackingBG", specificImage: "", description: "This is an amazing sleeping bag")
+    ]
+    
     
     func getCategories() -> [Categories] {
         
@@ -43,10 +53,12 @@ class DataService {
     func getSpecificCategories(forCategoryTitle title: String) -> [SpecificCategory] {
         
         switch title {
-        case "HIKING":
-            return getHikingData()
-        default:
-            return getCampingData()
+        case "HIKING": return getHikingData()
+        case "DIVING": return getDivingData()
+        case "RV LIFE": return getRVLifeData()
+        case "FISHING": return getFishingData()
+        case "BACKPACKS": return getBackpacksData()
+        default: return getCampingData()
         }
         
     }
@@ -57,5 +69,21 @@ class DataService {
     
     func getCampingData() -> [SpecificCategory] {
         return camping
+    }
+    
+    func getDivingData() -> [SpecificCategory] {
+        return diving
+    }
+    
+    func getFishingData() -> [SpecificCategory] {
+        return fishing
+    }
+    
+    func getRVLifeData() -> [SpecificCategory] {
+        return rvLife
+    }
+    
+    func getBackpacksData() -> [SpecificCategory] {
+        return backpacks
     }
 }

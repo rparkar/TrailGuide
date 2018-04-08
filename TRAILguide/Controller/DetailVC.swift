@@ -11,7 +11,6 @@ import UIKit
 class DetailVC: UIViewController {
     
     //outlets
-    
     @IBOutlet weak var gearImage: UIImageView!
     @IBOutlet weak var categoryBackgroundImage: UIImageView!
     @IBOutlet weak var gearNameLabel: UILabel!
@@ -20,12 +19,10 @@ class DetailVC: UIViewController {
     //variables
     private (set) public var gear : SpecificCategory! = nil
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpView()
-        // Do any additional setup after loading the view.
     }
 
     func initData (gear: SpecificCategory) {

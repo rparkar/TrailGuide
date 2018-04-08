@@ -11,7 +11,6 @@ import UIKit
 class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //outlets
-    
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var categoryBGImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,7 +19,6 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
     public private (set) var specificCategoryGearArray = [SpecificCategory]()
     public private (set) var category: Categories! = nil
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,8 +26,6 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
   
         setUpView()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -54,8 +50,8 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as? ItemCell else {return UICollectionViewCell()}
+        
         let gear = specificCategoryGearArray[indexPath.row]
         cell.updateCollectionCell(specificCategory: gear)
         
@@ -65,10 +61,8 @@ class SpecificCategoryVC: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return specificCategoryGearArray.count
     }
-    
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
