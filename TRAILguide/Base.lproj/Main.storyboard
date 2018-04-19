@@ -403,7 +403,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campingBG" translatesAutoresizingMaskIntoConstraints="NO" id="zcy-3R-Jaq">
                                 <rect key="frame" x="0.0" y="250" width="375" height="417"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleepingBag" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-mX-hwW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleepingBag" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-mX-hwW">
                                 <rect key="frame" x="0.0" y="80" width="375" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="RRy-Fw-dEb"/>

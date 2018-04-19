@@ -21,14 +21,13 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpView()
     }
 
     func initData (gear: SpecificCategory) {
         
         self.gear = gear
-        print(gear.categoryBackGround)
         
     }
     
